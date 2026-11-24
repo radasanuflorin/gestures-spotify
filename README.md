@@ -6,7 +6,7 @@ Control Spotify with hand gestures from your webcam.
 
 <img src="docs/demo.gif" alt="Demo" width="560">
 
-[Full demo video](docs/demo.mp4)
+▶ [Watch the full video (45 s)](docs/demo.mp4)
 
 </div>
 
