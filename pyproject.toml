@@ -1,0 +1,22 @@
+[project]
+name = "gestures-spotify"
+version = "1.0.0"
+description = "Hand-gesture recognition from a webcam with MediaPipe: held signs and a hand turned like a volume knob"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+dependencies = ["mediapipe>=1.2"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

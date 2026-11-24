@@ -1,0 +1,3 @@
+# OpenCV comes with mediapipe (as opencv-contrib-python): do not also install opencv-python,
+# the two packages overwrite each other's files.
+mediapipe>=1.2

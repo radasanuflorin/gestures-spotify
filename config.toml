@@ -1,0 +1,42 @@
+# gestures-spotify settings. Distances are fractions of the camera image (0.25 = a quarter of it).
+# Delete a line to use its default. Restart after a change.
+
+[camera]
+index = 0            # 0 = first webcam; try 1 if you have more than one
+width = 640
+height = 480
+backend = "dshow"    # "dshow" (DirectShow) or "msmf" (Media Foundation); try the other if the image is wrong
+brighten = false     # lift dark images before looking for the hand (calibrate.py tells you if it helps)
+
+[hand]
+min_confidence = 0.6 # 0..1, higher = fewer false detections, but needs better light
+ignore_bottom = 0.25 # a hand in this bottom part of the image is ignored (your mouse and keyboard); 0 = none.
+                     # Distances and edges below are measured in the part of the image that is left.
+
+[play_pause]
+# Hold a fist still to pause, an open palm (facing the camera) still to play.
+hold = 1.2           # seconds the sign must be held
+max_move = 0.15      # how far the hand may drift while holding (a moving hand restarts the hold)
+frontal = 0.55       # how much the palm must face the camera to play: palm width / length,
+                     # about 0.8 seen from the front, 0.2-0.3 from the side
+
+[track]
+# Point the index finger right (next) or left (previous) and hold it.
+hold = 1.0           # seconds the finger must be held
+max_move = 0.15
+
+[actions]
+cooldown = 1.0       # seconds after any action when nothing new fires, to bring the hand back
+                     # (turning the volume knob further the same way still works)
+
+[quit]
+# Hold up the middle finger alone to close the app.
+enabled = true
+hold = 1.0           # seconds it must be held
+
+[volume]
+# Turn the open hand like a knob: clockwise (to the right) for louder, the other way for quieter.
+# Only turning away from where you started counts: bringing the hand back changes nothing.
+step = 5             # percent per step
+step_angle = 15      # degrees of turn for one step
+settle = 0.3         # seconds the hand must be open before turning counts
